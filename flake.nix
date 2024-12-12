@@ -61,6 +61,21 @@
             x86_64-linux = "sha256-J8eGdctm3FwUGzdK/iYm/baPSLB2+RSnPsuApJGDhJk=";            
           };
         };
+        "4.16.26" = {
+          sha256 = {
+            aarch64-darwin = "sha256-ll+eVFG89Pc2w/hbu9j7kv1kjuSaGu5stFPDAc5QQ+4=";
+            aarch64-linux = "sha256-2TpCMf+v/ciQaj2pyAV9oajCN7GGj30FidOkKRpsEeY=";
+            x86_64-darwin = "sha256-MXC0Npf9KtRhbZPmauABE3NSv+H3Pm37Aceax4Aq8iQ=";
+            x86_64-linux = "sha256-sKffDVPnju6sia8kW4i6j3K1z0SQqJzqF/ElLHb01vY=";
+          };
+        };
+        "4.17.8" = {
+          sha256 = {
+            aarch64-darwin = "sha256-1V89V2ffYrgL6CPblMmGFPhwpBF7ij5CL8+Wq4TIfQc=";
+            aarch64-linux = "sha256-dL4tQKq/rFc2/3hKMJ9w444MtBM7wcGYvX7ReRNO+Uk=";
+            x86_64-darwin = "sha256-NC497vgkURT5iKggXctvUhJ+c52ibiViNSTxl4NYHOg=";
+            x86_64-linux = "sha256-8txV4C5Tu2FA1sec50tm9oX3T0jdPzaLLN42dKRxAYU=";          };
+        };
       };
 
       systemFilenameMap = {
@@ -102,7 +117,7 @@
       };
     in ocPackages // {
       oc-meta = ocMetaPackage;
-      oc = final.oc_4_15;
+      oc = final.oc_4_17;
     };
   in {
     checks = forAllSystems (system: {
@@ -149,6 +164,8 @@
       oc_4_13 = pkgs.oc_4_13;
       oc_4_14 = pkgs.oc_4_14;
       oc_4_15 = pkgs.oc_4_15;
+      oc_4_16 = pkgs.oc_4_16;
+      oc_4_17 = pkgs.oc_4_17;
     });
   };
 }
