@@ -76,6 +76,14 @@
             x86_64-darwin = "sha256-NC497vgkURT5iKggXctvUhJ+c52ibiViNSTxl4NYHOg=";
             x86_64-linux = "sha256-8txV4C5Tu2FA1sec50tm9oX3T0jdPzaLLN42dKRxAYU=";          };
         };
+        "4.19.8" = {
+          sha256 = {
+            aarch64-darwin = "sha256-pB0RRATxlvTtG1EoUbYEvIe4wYjo7qo28Q4YJ7cLfNs=";
+            aarch64-linux = "sha256-Zi0tWAEH3XYFAvdhyCTC2vIwntzGsbsXmh0jw9IN1gQ=";
+            x86_64-darwin = "sha256-Zejn4BDpQjpBNNyZzz1tyZx7vM+dYGhQXoE6wIQmh2I=";
+            x86_64-linux = "sha256-7cYuU5WEJlRWaJhHP0Eir5aTgfnfjsHzSChRQizCrGM=";
+          };
+        };
       };
 
       systemFilenameMap = {
@@ -117,7 +125,7 @@
       };
     in ocPackages // {
       oc-meta = ocMetaPackage;
-      oc = final.oc_4_17;
+      oc = final.oc_4_19;
     };
   in {
     checks = forAllSystems (system: {
@@ -166,6 +174,7 @@
       oc_4_15 = pkgs.oc_4_15;
       oc_4_16 = pkgs.oc_4_16;
       oc_4_17 = pkgs.oc_4_17;
+      oc_4_19 = pkgs.oc_4_19;
     });
   };
 }
