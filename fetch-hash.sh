@@ -39,7 +39,7 @@ for arch in aarch64 x86_64; do
 		filename="openshift-client-${system}-arm64.tar.gz"
 	    fi
 	    url="https://mirror.openshift.com/pub/openshift-v4/clients/ocp/$version/$filename"
-	    hash=$(nix hash to-sri --type sha256 "$(nix-prefetch fetchurl --type sha256 --quiet --url "$url")")
+	    hash=$(nix hash convert --to sri --hash-algo sha256 "$(nix-prefetch fetchurl --type sha256 --quiet --url "$url")")
 	    if [[ $system =~ mac ]]; then
 		system=darwin
 	    fi
