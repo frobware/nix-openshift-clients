@@ -95,7 +95,7 @@
 
       ocPackages = builtins.listToAttrs (nixpkgs.lib.mapAttrsToList (version: versionData: {
         name = "oc_${builtins.replaceStrings ["."] ["_"] "${prev.lib.versions.majorMinor version}" }";
-        value = buildOpenShiftClientVersionFor prev.system version versionData.sha256.${prev.system} systemFilenameMap.${prev.system};
+        value = buildOpenShiftClientVersionFor prev.stdenv.hostPlatform.system version versionData.sha256.${prev.stdenv.hostPlatform.system} systemFilenameMap.${prev.stdenv.hostPlatform.system};
       }) versions);
 
       versionsList = builtins.attrNames versions;
